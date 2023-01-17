@@ -15,6 +15,7 @@ extern "C" {
 #include "comm.h"
 #include "sample_comm.h"
 #include "rtsp_handle.h"
+#include "sdk_pq_bin.h"
 
 #define BIG_STREAM_SIZE     PIC_2688x1944
 #define SMALL_STREAM_SIZE   PIC_VGA
@@ -1425,6 +1426,7 @@ AIAENC_ERR6:
     return s32Ret;
 }
 
+#define PQ_BIN_FILE_PATH    "/opt/resource/pq_bin/pq_bin_gc4653_2l.bin"
 /******************************************************************************
 * function    : main()
 * Description : video venc sample
@@ -1443,6 +1445,7 @@ AIAENC_ERR6:
     HI_MPI_AENC_AacInit();
     pthread_create(&aenc_thread, 0, SAMPLE_AUDIO_AiAenc, NULL);
 
+    sdk_pq_bin_operate(PQ_BIN_IMPORT,PQ_BIN_FILE_PATH);
 
     
     while (1);
