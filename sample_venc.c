@@ -1343,7 +1343,9 @@ HI_S32 SAMPLE_AUDIO_AiAenc(HI_VOID)
 //        printf("bind adec:%d to ao(%d,%d) ok \n", AdChn, AoDev, AoChn);
 //    }
 
-    while(1);
+    while(1) {
+    	sleep(1);
+    };
     printf("\nplease press twice ENTER to exit this sample\n");
     getchar();
     getchar();
@@ -1448,7 +1450,9 @@ AIAENC_ERR6:
     sdk_pq_bin_operate(PQ_BIN_IMPORT,PQ_BIN_FILE_PATH);
 
     
-    while (1);
+    while (1) {
+    	sleep(1);	
+    };
     
 }
 
